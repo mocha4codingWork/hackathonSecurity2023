@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chatbot</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="wrapper">
+    <div class="previous-chats">
+      <div class="header">
+        <h2>All Chats</h2>
+        
+      </div>
+      <div class="upper-section">
+        <!-- This section will be populated dynamically based on previous chats -->
+      </div>
+      <hr />
+      <div class="lower-section">
+        <button id = "newChatBtn" class="new-chat-btn">New Chat</button>
+        <button id = "deleteBtn" class="delete-chat-btn">Delete Chat</button>
+        <button id = "logoutBtn" class="logout-btn" >Log out</button>
+      </div>
+    </div>
+    <div id = "chat-window" class="chat-window">
+      <div class="chat-container">
+        <!-- This section will be populated dynamically based on the chat messages -->
+      </div>
+      <div class="textbox-container">
+        <textarea id = "input" class="textbox" placeholder="Type your message here..." rows="8"></textarea>
+        <button id = "send-button" class="send-btn">Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src = "script.js"></script>
+</html>
