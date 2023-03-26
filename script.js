@@ -30,10 +30,12 @@ function getUserName()
 
 // Get the username
 const userName = getUserName()
-
+const apiUrl = "https://20.193.139.27:8443/api/v1/session/";
 async function getChatSessionId(){
  
-  var url = "http://20.193.139.27:8080/api/v1/session/" + userName;
+  //var url = "https://20.193.139.27:8443/api/v1/session/" + userName;
+  var url = apiUrl + userName;
+  console.log("Getting session id from " + url);
   var sessionId;
   try {
     const response = await fetch(url, {
@@ -95,7 +97,9 @@ function addChatBubble(text, isUser) {
 function sendMessageToDatabase(text)
 {
   //const sessionId = "24815b58-8a8c-4225-999d-096678620187"; 
-  const url = `http://20.193.139.27:8080/api/v1/session/${chatSessionId}/message`;
+  //const url = `https://20.193.139.27:8443/api/v1/session/${chatSessionId}/message`;
+  const url = apiUrl + chatSessionId + "/message";
+  console.log("messagin to database via " + url);
   console.log("User sent " + text);
   fetch(url, {
     method: "POST",
